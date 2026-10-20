@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주문서 - STYLEBOX</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- 토스페이먼츠 결제위젯 SDK v2 -->
+  <script src="https://js.tosspayments.com/v2/standard"></script>
+</head>
+<body>
+  <header id="header"></header>
+
+  <main class="inner">
+    <h1 class="co-title">주문서</h1>
+
+    <div id="emptyOrder" class="result" hidden>
+      <h1>주문할 상품이 없습니다.</h1>
+      <p class="desc">장바구니에 상품을 담은 뒤 다시 시도해 주세요.</p>
+      <div class="btn-row"><a href="index.html" class="btn primary">쇼핑 계속하기</a></div>
+    </div>
+
+    <div class="checkout" id="checkout">
+      <div>
+        <!-- 주문 상품 -->
+        <section class="box">
+          <h3>주문 상품 <small id="itemCount"></small></h3>
+          <div id="orderItems"></div>
+        </section>
+
+        <!-- 주문자 / 배송 정보 -->
+        <section class="box">
+          <h3>주문자 · 배송 정보</h3>
+          <form class="form-grid" id="ordererForm" novalidate>
+            <label for="name">이름 <em>*</em></label>
+            <input class="input" id="name" name="name" autocomplete="name" placeholder="홍길동">
+            <label for="phone">휴대폰 번호 <em>*</em></label>
+            <input class="input" id="phone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="01012345678">
+            <label for="email">이메일</label>
+            <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="example@email.com">
+            <label for="addr1">배송지 <em>*</em></label>
+            <div>
+              <div class="addr-row">
+                <input class="input" id="addr1" name="addr1" autocomplete="street-address" placeholder="기본 주소">
+              </div>
+              <input class="input" id="addr2" name="addr2" style="margin-top:6px" placeholder="상세 주소">
+            </div>
+          </form>
+        </section>
+
+        <!-- 결제 수단 (토스페이먼츠 결제위젯) -->
+        <section class="box">
+          <h3>결제 수단</h3>
+          <div id="payment-method"></div>
+          <div id="agreement"></div>
+          <div class="alert" id="protocolAlert" hidden>
+            파일(<code>file://</code>)로 열면 결제 후 돌아올 주소가 없어 결제가 완료되지 않습니다.
+            터미널에서 <code>node server.js</code> 실행 후 <code>http://localhost:5500</code> 으로 접속해 주세요.
+          </div>
+        </section>
+      </div>
+
+      <!-- 결제 금액 -->
+      <aside class="summary">
+        <h3>결제 금액</h3>
+        <div class="sum-row"><span>상품 금액</span><span id="sumPrice">0원</span></div>
+        <div class="sum-row discount"><span>상품 할인</span><span id="sumDiscount">0원</span></div>
+        <div class="sum-row"><span>배송비</span><span>무료</span></div>
+        <div class="sum-row total"><span>총 결제 금액</span><span id="sumTotal">0원</span></div>
+        <button type="button" class="btn blue" id="payButton" disabled>결제 수단 불러오는 중...</button>
+        <p class="notice">
+          토스페이먼츠 테스트 환경입니다. 실제 결제(출금)는 이루어지지 않습니다.<br>
+          주문 내용을 확인하였으며, 위 결제에 동의합니다.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

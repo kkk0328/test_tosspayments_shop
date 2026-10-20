@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>결제 실패 - STYLEBOX</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main class="result">
+    <div class="icon fail">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </div>
+    <h1>결제에 실패했습니다</h1>
+    <p class="desc" id="failMessage">결제가 정상적으로 처리되지 않았습니다.</p>
+
+    <dl class="result-table">
+      <div><dt>에러 코드</dt><dd id="failCode">-</dd></div>
+      <div><dt>주문번호</dt><dd id="failOrderId">-</dd></div>
+    </dl>
+
+    <div class="btn-row">
+      <a href="index.html" class="btn">홈으로</a>
+      <a href="checkout.html" class="btn primary" id="retry">다시 결제하기</a>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/common.js"></script>
+  <script>
+    // failUrl 로 code, message, orderId 가 전달됩니다.
+    renderLayout('');
+    const params = new URLSearchParams(location.search);
+    $('#failCode').textContent = params.get('code') || '-';
+    $('#failMessage').textContent = params.get('message') || '결제가 정상적으로 처리되지 않았습니다.';
+    $('#failOrderId').textContent = params.get('orderId') || '-';
+
+    const pending = storage.get('sb_pending_order', null, sessionStorage);
+    if (pending && pending.mode === 'buynow') $('#retry').href = 'checkout.html?mode=buynow';
+  </script>
+</body>
+</html>

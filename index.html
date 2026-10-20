@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STYLEBOX - 온라인 패션 스토어</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main>
+    <!-- 메인 배너 -->
+    <section class="banner" aria-label="기획전">
+      <div class="banner-track" id="bannerTrack">
+        <a href="tops.html" class="banner-slide" style="background:linear-gradient(120deg,#1b1b1b,#3a3a3a)">
+          <div class="inner">
+            <p class="eyebrow">24 F/W NEW ARRIVALS</p>
+            <h2>가을을 여는<br>헤비웨이트 컬렉션</h2>
+            <p>상의 최대 40% 할인 · 무료배송</p>
+          </div>
+          <div class="art" data-art="T001"></div>
+        </a>
+        <a href="shoes.html" class="banner-slide" style="background:linear-gradient(120deg,#0f3b8c,#3d7bd9)">
+          <div class="inner">
+            <p class="eyebrow">SNEAKERS WEEK</p>
+            <h2>매일 신는 스니커즈<br>지금 가장 좋은 가격</h2>
+            <p>신발 단독 할인 + 추가 쿠폰</p>
+          </div>
+          <div class="art" data-art="S003"></div>
+        </a>
+        <a href="pants.html" class="banner-slide" style="background:linear-gradient(120deg,#3b3326,#8a7556)">
+          <div class="inner">
+            <p class="eyebrow">BEST PANTS</p>
+            <h2>누적 판매 1위<br>세미 와이드 슬랙스</h2>
+            <p>후기 2만 개가 증명한 핏</p>
+          </div>
+          <div class="art" data-art="P004"></div>
+        </a>
+      </div>
+      <div class="banner-dots" id="bannerDots"></div>
+    </section>
+
+    <div class="inner">
+      <!-- 검색 결과 -->
+      <section class="section" id="searchSection" hidden>
+        <div class="section-head"><h2 id="searchTitle"></h2><a href="index.html" class="more">검색 초기화</a></div>
+        <ul class="grid home" id="searchGrid"></ul>
+      </section>
+
+      <!-- 카테고리 바로가기 -->
+      <section class="section">
+        <div class="section-head"><h2>카테고리</h2></div>
+        <div class="quick-cats">
+          <a href="tops.html" class="quick-cat" data-art="T005"><strong>상의<span>TOP</span></strong></a>
+          <a href="shoes.html" class="quick-cat" data-art="S001"><strong>신발<span>SHOES</span></strong></a>
+          <a href="pants.html" class="quick-cat" data-art="P001"><strong>바지<span>PANTS</span></strong></a>
+        </div>
+      </section>
+
+      <!-- 랭킹 -->
+      <section class="section">
+        <div class="section-head"><h2>실시간 랭킹</h2><span class="more">좋아요 기준</span></div>
+        <div class="tabs" id="rankingTabs">
+          <button type="button" class="chip active" data-rank="all">전체</button>
+          <button type="button" class="chip" data-rank="tops">상의</button>
+          <button type="button" class="chip" data-rank="shoes">신발</button>
+          <button type="button" class="chip" data-rank="pants">바지</button>
+        </div>
+        <ul class="grid home" id="rankingGrid"></ul>
+      </section>
+
+      <!-- 할인 -->
+      <section class="section">
+        <div class="section-head"><h2>지금 할인 중</h2><span class="more">할인율 높은 순</span></div>
+        <ul class="grid home" id="saleGrid"></ul>
+      </section>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/common.js"></script>
+  <script>initHomePage();</script>
+</body>
+</html>
