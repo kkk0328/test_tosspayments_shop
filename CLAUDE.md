@@ -85,7 +85,7 @@ http://localhost:5500 (포트는 `PORT` 환경 변수로 변경). Node 18+ 필�
 
 요구사항·결정은 `PRD.md`가 기준이다. S1~S5 구현 완료(2026-10-20).
 
-- 프로젝트: `stylebox` (ref `shtygsunjjouulfpqpdw`, `ap-northeast-2`, 조직 `reno-del's Org`). 같은 조직의 `toss_test`(시드니, 빈 프로젝트)는 쓰지 않는다.
+- 프로젝트: `stylebox` (ref `iftcupnhdudjovfbjcnk`, `ap-northeast-2`, 조직 `kkk0328's Org` = GitHub 계정 `kkk0328`). Supabase MCP 커넥터도 이 계정으로 연결되어 있어야 한다. 다른 계정(예: 예전에 쓰던 `reno-del's Org`)에 연결되어 있으면 이 프로젝트가 보이지 않으니, 작업 전에 `list_organizations`로 확인한다.
 - 스키마 변경은 `supabase/migrations/*.sql` 파일로 남기고 같은 SQL을 적용한다. 상품 시드는 `supabase/seed.sql`.
 - 대시보드에서 해야 하는 설정(코드로 안 됨): Authentication > URL Configuration의 Site URL·Redirect URLs에 `http://localhost:5500/**` 등록, 카카오·구글 제공자의 Client ID/Secret 등록, 이메일 확인(Confirm email) 켜기.
 - Supabase MCP로 프로젝트를 만들 땐 `get_cost` → `confirm_cost` → `create_project(confirm_cost_id)` 순서가 필요하다.

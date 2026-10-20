@@ -95,7 +95,7 @@ payments(id pk, order_id fk unique, payment_key unique, method, amount, approved
 
 | 키 | 위치 | 비고 |
 |---|---|---|
-| Supabase URL / anon(publishable) 키 | `js/supabase.js` | 공개 가능. RLS가 보호. URL은 `https://shtygsunjjouulfpqpdw.supabase.co` |
+| Supabase URL / anon(publishable) 키 | `js/supabase.js` | 공개 가능. RLS가 보호. URL은 `https://iftcupnhdudjovfbjcnk.supabase.co` |
 | Supabase `service_role` 키 | `server.js` 환경 변수 `SUPABASE_SERVICE_ROLE_KEY` | **절대 클라이언트·저장소에 두지 않는다.** `.env`는 `.gitignore` 처리 |
 | 토스 클라이언트 키 | `js/checkout.js` | 기존 공개 테스트 키 유지 |
 | 토스 시크릿 키 | `server.js` `TOSS_SECRET_KEY` | 기존 유지 |
@@ -131,9 +131,9 @@ payments(id pk, order_id fk unique, payment_key unique, method, amount, approved
 ## 8. 결정 사항
 
 1. Supabase 프로젝트는 **신규 생성**한다. → 생성 완료 (2026-10-20)
-   - 이름 `stylebox`, ref `shtygsunjjouulfpqpdw`, 리전 `ap-northeast-2`(서울), 조직 `reno-del's Org`, 비용 월 $0
-   - 프로젝트 URL: `https://shtygsunjjouulfpqpdw.supabase.co`
-   - 기존 `toss_test`(시드니 리전, 빈 프로젝트)는 사용하지 않는다.
+   - 이름 `stylebox`, ref `iftcupnhdudjovfbjcnk`, 리전 `ap-northeast-2`(서울), 조직 `kkk0328's Org`(GitHub 계정 `kkk0328`), 비용 월 $0
+   - 프로젝트 URL: `https://iftcupnhdudjovfbjcnk.supabase.co`
+   - 처음에는 다른 계정(`reno-del's Org`)에 만들어졌으나 본인 계정으로 다시 생성했다. 그 계정의 프로젝트는 사용하지 않는다.
 2. **게스트 결제를 허용**한다. (`orders.user_id` nullable, `guest_token`으로 비회원 주문 조회)
 3. **이메일 인증(가입 확인 메일)을 켠다.**
 4. **소셜 로그인을 포함**한다. 제공자는 카카오·구글을 기본으로 한다.

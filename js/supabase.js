@@ -3,8 +3,8 @@
    - URL / publishable(anon) 키는 공개 가능한 값입니다. 데이터는 RLS 정책이 보호합니다.
    - service_role 키는 절대 이 파일(브라우저)에 넣지 마세요. server.js 환경 변수 전용입니다.
    ========================================================= */
-const SUPABASE_URL = 'https://shtygsunjjouulfpqpdw.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_gFAFM7Lcnp5vW5noJVs3Fg_pOuc0TsD';
+const SUPABASE_URL = 'https://iftcupnhdudjovfbjcnk.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_RCovi1bIl-egNwgIr95B0g_IRLZF3QI';
 
 // supabase-js CDN(UMD)이 로드되지 않으면 null → 각 화면에서 오류 안내를 표시합니다.
 const sb = window.supabase && SUPABASE_URL && SUPABASE_ANON_KEY

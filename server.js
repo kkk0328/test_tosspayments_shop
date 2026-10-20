@@ -22,8 +22,8 @@ const PORT = process.env.PORT || 5500;
 const SECRET_KEY = process.env.TOSS_SECRET_KEY || 'test_gsk_docs_OaPz8L5KdmQXkzRz3y47BMw6';
 
 // Supabase: URL·publishable 키는 공개 값, service_role 키는 비공개 (환경 변수 전용, 저장소 금지)
-const SUPABASE_URL = process.env.SUPABASE_URL || 'https://shtygsunjjouulfpqpdw.supabase.co';
-const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'sb_publishable_gFAFM7Lcnp5vW5noJVs3Fg_pOuc0TsD';
+const SUPABASE_URL = process.env.SUPABASE_URL || 'https://iftcupnhdudjovfbjcnk.supabase.co';
+const SUPABASE_ANON_KEY = process.env.SUPABASE_ANON_KEY || 'sb_publishable_RCovi1bIl-egNwgIr95B0g_IRLZF3QI';
 const SERVICE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || '';
 
 const MIME = {
