@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>주문 조회 - STYLEBOX</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header id="header"></header>
+
+  <main class="inner orders-page">
+    <h1 class="co-title" id="ordersTitle">주문 조회</h1>
+
+    <!-- 회원 주문 내역 -->
+    <section id="memberOrders" hidden>
+      <p class="orders-sub">결제가 완료된 주문만 표시됩니다.</p>
+      <div id="memberList"></div>
+    </section>
+
+    <!-- 비회원 주문 조회 -->
+    <section id="guestLookup" hidden>
+      <section class="box">
+        <h3>비회원 주문 조회</h3>
+        <form class="form-grid" id="lookupForm" novalidate>
+          <label for="lookupOrderId">주문번호</label>
+          <input class="input" id="lookupOrderId" placeholder="ORD_..." autocomplete="off">
+          <label for="lookupEmail">주문 이메일</label>
+          <input class="input" id="lookupEmail" type="email" autocomplete="email" placeholder="example@email.com">
+        </form>
+        <div class="btn-row"><button type="button" class="btn primary" id="lookupBtn">조회하기</button></div>
+        <p class="orders-sub">회원이신가요? <a href="login.html?next=orders.html" class="link">로그인</a>하면 전체 주문 내역을 볼 수 있습니다.</p>
+      </section>
+
+      <section class="box" id="recentGuest" hidden>
+        <h3>이 브라우저에서 주문한 내역</h3>
+        <div class="recent-list" id="recentList"></div>
+      </section>
+
+      <div id="guestResult"></div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/supabase.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/orders.js"></script>
+</body>
+</html>

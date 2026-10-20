@@ -32,12 +32,16 @@
         <!-- 주문자 / 배송 정보 -->
         <section class="box">
           <h3>주문자 · 배송 정보</h3>
+          <p class="guest-note" id="guestNote" hidden>
+            비회원으로 주문합니다. 주문 조회에 이메일이 사용됩니다.
+            <a href="login.html?next=checkout.html" id="guestLogin">로그인하고 주문하기</a>
+          </p>
           <form class="form-grid" id="ordererForm" novalidate>
             <label for="name">이름 <em>*</em></label>
             <input class="input" id="name" name="name" autocomplete="name" placeholder="홍길동">
             <label for="phone">휴대폰 번호 <em>*</em></label>
             <input class="input" id="phone" name="phone" inputmode="numeric" autocomplete="tel" placeholder="01012345678">
-            <label for="email">이메일</label>
+            <label for="email">이메일 <em id="emailRequired" hidden>*</em></label>
             <input class="input" id="email" name="email" type="email" autocomplete="email" placeholder="example@email.com">
             <label for="addr1">배송지 <em>*</em></label>
             <div>
@@ -45,6 +49,7 @@
                 <input class="input" id="addr1" name="addr1" autocomplete="street-address" placeholder="기본 주소">
               </div>
               <input class="input" id="addr2" name="addr2" style="margin-top:6px" placeholder="상세 주소">
+              <label class="check" id="saveAddrRow" hidden><input type="checkbox" id="saveAddr" checked> 기본 배송지로 저장</label>
             </div>
           </form>
         </section>
@@ -79,6 +84,8 @@
 
   <div id="footer"></div>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+  <script src="js/supabase.js"></script>
   <script src="js/products.js"></script>
   <script src="js/common.js"></script>
   <script src="js/checkout.js"></script>

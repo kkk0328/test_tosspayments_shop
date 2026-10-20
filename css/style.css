@@ -273,6 +273,59 @@ img, svg { display: block; }
 .footer { border-top: 1px solid var(--line); padding: 32px 0 48px; color: var(--sub); font-size: 12px; line-height: 1.8; margin-top: 64px; }
 .footer strong { color: #000; font-weight: 800; font-size: 14px; }
 
+.footer a { text-decoration: underline; }
+
+/* ---------- 공통 보조 ---------- */
+[hidden] { display: none !important; }
+.empty.error { color: var(--red); line-height: 1.6; }
+.empty.error small { color: var(--sub); }
+.link { text-decoration: underline; }
+
+/* ---------- 헤더 로그인 영역 ---------- */
+.auth-area { display: flex; align-items: center; gap: 14px; }
+.gnb-util .logout { font-size: 12px; color: #aaa; }
+.gnb-util .logout:hover { color: #fff; }
+
+/* ---------- 로그인 ---------- */
+.auth { max-width: 400px; margin: 0 auto; padding: 56px 20px 40px; }
+.auth-tabs { margin-bottom: 24px; }
+.auth-tabs .chip { flex: 1; }
+.auth .field { margin-bottom: 14px; }
+.auth .field label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 6px; }
+.auth .input { width: 100%; }
+.auth .btn { width: 100%; }
+.auth-msg { font-size: 13px; line-height: 1.6; padding: 12px 14px; margin-bottom: 14px; background: var(--bg-soft); }
+.auth-msg.error { background: #fff0f0; color: var(--red); }
+.link-btn { display: block; margin: 12px auto 0; font-size: 13px; color: var(--sub); text-decoration: underline; }
+.social { margin-top: 32px; padding-top: 24px; border-top: 1px solid var(--line); display: grid; gap: 8px; }
+.social-label { font-size: 12px; color: var(--sub); text-align: center; margin-bottom: 4px; }
+.social-btn.kakao { background: #fee500; border-color: #fee500; color: #191919; }
+.social-btn.google { background: #fff; border-color: #dadce0; color: #3c4043; }
+.social-btn:disabled { background: var(--bg-soft); border-color: var(--line); color: var(--sub); }
+.auth-foot { margin-top: 28px; text-align: center; font-size: 13px; color: var(--sub); }
+.auth-foot a { color: #000; text-decoration: underline; }
+
+/* ---------- 주문서 보조 ---------- */
+.guest-note { font-size: 13px; color: var(--text-2); background: var(--bg-soft); padding: 12px 14px; margin-bottom: 14px; line-height: 1.6; }
+.guest-note a { color: var(--blue); text-decoration: underline; margin-left: 4px; }
+.check { display: flex; align-items: center; gap: 6px; margin-top: 10px; font-size: 13px; cursor: pointer; }
+
+/* ---------- 주문 조회 ---------- */
+.orders-page { max-width: 760px; }
+.orders-sub { font-size: 13px; color: var(--sub); margin: 12px 0 16px; }
+.order-card { border-top: 2px solid #000; padding: 18px 0 8px; margin-bottom: 28px; }
+.order-card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 8px; }
+.order-date { font-size: 15px; font-weight: 800; }
+.order-no { font-size: 12px; color: var(--sub); margin-top: 4px; word-break: break-all; }
+.status { flex-shrink: 0; font-size: 12px; font-weight: 700; padding: 4px 10px; border: 1px solid var(--line); }
+.status.paid { border-color: var(--blue); color: var(--blue); }
+.status.failed { border-color: var(--red); color: var(--red); }
+.order-meta { margin-top: 8px; }
+.order-meta div { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; border-top: 1px solid var(--line); font-size: 13px; }
+.order-meta dt { color: var(--sub); flex-shrink: 0; }
+.order-meta dd { font-weight: 600; text-align: right; word-break: break-all; }
+.recent-list { display: flex; flex-wrap: wrap; gap: 8px; }
+
 /* ---------- 반응형 ---------- */
 @media (max-width: 1100px) { .grid { grid-template-columns: repeat(4, 1fr); } }
 @media (max-width: 900px) {
